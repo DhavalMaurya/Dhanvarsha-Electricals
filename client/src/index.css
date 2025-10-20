@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* ==========================
+   🎨 Custom Theme Variables
+========================== */
+:root {
+  --color-primary: #1E3A8A;         /* Deep Blue for headers & main UI */
+  --color-secondary: #3B82F6;       /* Medium Blue for highlights */
+  --color-accent: #FFC107;          /* Electric Yellow for CTA */
+  --color-surface: #F3F4F6;         /* Light Gray background */
+  --color-text: #374151;            /* Dark Gray for text */ 
+  --color-muted: #6B7280;           /* Muted text (optional) */
+  --color-inverse: #FFFFFF;         /* White for contrast */
+  --color-dark: #111827;            /* Deep dark for nav/footer */
+  --color-light-blue: #EFF6FF;      /* Light Blue for secondary background */
+}
+
+
+/* ==========================
+   ✍️ Font Settings
+========================== */
+* {
+  font-family: "Crimson Text", serif;
+}
+.varela-round-regular {
+  font-family: "Varela Round", sans-serif;
+}
+.crimson-text-regular {
+  font-family: "Crimson Text", serif;
+}
+
+/* ==========================
+   🔧 Custom Utility Classes
+========================== */
+.text-primary       { color: var(--color-primary); }
+.text-secondary     { color: var(--color-secondary); }
+.text-accent        { color: var(--color-accent); }
+.text-text          { color: var(--color-text); }
+.text-muted         { color: var(--color-muted); }
+.text-inverse       { color: var(--color-inverse); }
+
+.bg-primary         { background-color: var(--color-primary); }
+.bg-secondary       { background-color: var(--color-secondary); }
+.bg-accent          { background-color: var(--color-accent); }
+.bg-surface         { background-color: var(--color-surface); }
+.bg-dark            { background-color: var(--color-dark); }
+.bg-light-blue      { background-color: var(--color-light-blue); }
+
+/* ==========================
+   🌀 Marquee Animations
+========================== */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0%); }
+}
+.animate-marquee-right {
+  animation: marquee-right 20s linear infinite;
+  width: max-content;
+}
+
+@keyframes marquee-smooth {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.animate-marquee-smooth {
+  animation: marquee-smooth 50s linear infinite;
+  will-change: transform;
+  width: max-content;
+}
+@media (max-width: 640px) {
+  .animate-marquee-smooth {
+    animation-duration: 30s;
+  }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .animate-marquee-smooth {
+    animation-duration: 40s;
+  }
+}
+@media (min-width: 1025px) {
+  .animate-marquee-smooth {
+    animation-duration: 50s;
+  }
+}
+
+/* ==========================
+   📵 Hide Scrollbar Utility
+========================== */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
